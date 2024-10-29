@@ -27,23 +27,17 @@ void Box::Draw2(){
 }
 
 void Box::Update1(float loaders_y, float loaders_x, float loaders_height, float loaders_width) {
-		if ((2 * loaders_y + loaders_height) / 2 - 50 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 == (2 * box_x + box_width) / 2) {
-		if (IsKeyDown(KEY_W) && loaders.EventTriggered1(0.15) && box_y - 100 >= 25) {
+	if ((2 * loaders_y + loaders_height) / 2 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 == (2 * box_x + box_width) / 2) {
+		if (IsKeyDown(KEY_W) && !(IsKeyDown(KEY_S) || IsKeyDown(KEY_D) || IsKeyDown(KEY_A)) && loaders.EventTriggered1(0.15) && box_y - 100 >= 25) {
 			box_y -= speed;
 		}
-	}
-	if ((2 * loaders_y + loaders_height) / 2 + 50 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 == (2 * box_x + box_width) / 2) {
-		if (IsKeyDown(KEY_S) && loaders.EventTriggered1(0.15) && box_y + 150 <= 700) {
+		if ((IsKeyDown(KEY_S) && !(IsKeyDown(KEY_W) || IsKeyDown(KEY_D) || IsKeyDown(KEY_A))) && loaders.EventTriggered1(0.15) && box_y + 150 <= 700) {
 			box_y += speed;
 		}
-	}
-	if ((2 * loaders_y + loaders_height) / 2 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 - 50 == (2 * box_x + box_width) / 2) {
-		if (IsKeyDown(KEY_A) && loaders.EventTriggered1(0.15) && box_x - 50 >= 25) {
+		if ((IsKeyDown(KEY_A) && !(IsKeyDown(KEY_W) || IsKeyDown(KEY_D) || IsKeyDown(KEY_S))) && loaders.EventTriggered1(0.15) && box_x - 50 >= 25) {
 			box_x -= speed;
 		}
-	}
-	if ((2 * loaders_y + loaders_height) / 2 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 + 50 == (2 * box_x + box_width) / 2) {
-		if (IsKeyDown(KEY_D) && loaders.EventTriggered1(0.15) && box_x + 150 <= 850) {
+		if ((IsKeyDown(KEY_D) && !(IsKeyDown(KEY_W) || IsKeyDown(KEY_S) || IsKeyDown(KEY_A))) && loaders.EventTriggered1(0.15) && box_x + 150 <= 850) {
 			box_x += speed;
 		}
 	}

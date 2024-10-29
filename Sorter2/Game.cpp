@@ -26,7 +26,7 @@ void Game::Score() {
 void Game::Update() {
 	if (running) {
 		box.Update1(loaders.loaders_y,loaders.loaders_x,loaders.loaders_height,loaders.loaders_width);
-		loaders.Update2();
+		loaders.Update2(box.box_x, box.box_y, box.box_height, box.box_width);
 	}
 }
 

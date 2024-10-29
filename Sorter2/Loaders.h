@@ -19,12 +19,13 @@ public:
 	int loaders_width = 50;
 	int loaders_height = 50;
 	int speed = 50;
+	int c = 0;
 	double lastUpdateTime1 = 0;
 	//Box box = Box();
 
 	bool EventTriggered1(double interval);
 	void Draw5();
-	void Update2();
+	void Update2(float box_x, float box_y, float box_height, float box_width);
 	void Reset2();
 };
 
