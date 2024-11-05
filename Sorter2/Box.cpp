@@ -27,7 +27,7 @@ void Box::Draw2(){
 }
 
 void Box::Update1(float loaders_y, float loaders_x, float loaders_height, float loaders_width) {
-	if ((2 * loaders_y + loaders_height) / 2 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 == (2 * box_x + box_width) / 2) {
+	/*if ((2 * loaders_y + loaders_height) / 2 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 == (2 * box_x + box_width) / 2) {
 		if (IsKeyDown(KEY_W) && !(IsKeyDown(KEY_S) || IsKeyDown(KEY_D) || IsKeyDown(KEY_A)) && loaders.EventTriggered1(0.15) && box_y - 100 >= 25) {
 			box_y -= speed;
 		}
@@ -39,6 +39,85 @@ void Box::Update1(float loaders_y, float loaders_x, float loaders_height, float 
 		}
 		if ((IsKeyDown(KEY_D) && !(IsKeyDown(KEY_W) || IsKeyDown(KEY_S) || IsKeyDown(KEY_A))) && loaders.EventTriggered1(0.15) && box_x + 150 <= 850) {
 			box_x += speed;
+		}
+	}*/
+	if ((2 * loaders_y + loaders_height) / 2-50 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 == (2 * box_x + box_width) / 2) {
+		if (/*IsKeyDown(KEY_W) && !(IsKeyDown(KEY_S) || IsKeyDown(KEY_D) || IsKeyDown(KEY_A)) && loaders.EventTriggered1(0.5) && */box_y - 100 >= 25 && f == 0) {
+			box_y -= 2;
+			w = true;
+			f++;
+			return;
+		}
+	}
+	if ((2 * loaders_y + loaders_height) / 2 + 50 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 == (2 * box_x + box_width) / 2) {
+		if (/*IsKeyDown(KEY_S) && !(IsKeyDown(KEY_W) || IsKeyDown(KEY_D) || IsKeyDown(KEY_A)) && loaders.EventTriggered1(0.5) && */box_y + 150 <= 700 && f == 0) {
+			box_y += 2;
+			s = true;
+			f++;
+			return;
+		}
+	}
+	if ((2 * loaders_y + loaders_height) / 2 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 - 50  == (2 * box_x + box_width) / 2) {
+		if (/*IsKeyDown(KEY_A) && !(IsKeyDown(KEY_S) || IsKeyDown(KEY_D) || IsKeyDown(KEY_W)) && loaders.EventTriggered1(0.5) && */box_x - 50 >= 25 && f == 0) {
+			box_x -= 2;
+			a = true;
+			f++;
+			return;
+		}
+	}
+	if ((2 * loaders_y + loaders_height) / 2 == (2 * box_y + box_height) / 2 && (2 * loaders_x + loaders_width) / 2 + 50  == (2 * box_x + box_width) / 2) {
+		if (/*IsKeyDown(KEY_D) && !(IsKeyDown(KEY_S) || IsKeyDown(KEY_W) || IsKeyDown(KEY_A)) && loaders.EventTriggered1(0.5) && */box_x + 150 <= 850 && f == 0) {
+			box_x += 2;
+			d = true;
+			f++;
+			return;
+		}
+	}
+
+	if (f > 0) {
+		if (w)
+		{
+			box_y -= 2;
+			f++;
+			if (f == 25) {
+				f = 0;
+				w = false;
+				return;
+			}
+			return;
+		}
+		if (s)
+		{
+			box_y += 2;
+			f++;
+			if (f == 25) {
+				f = 0;
+				s = false;
+				return;
+			}
+			return;
+		}
+		if (a)
+		{
+			box_x -= 2;
+			f++;
+			if (f == 25) {
+				f = 0;
+				a = false;
+				return;
+			}
+			return;
+		}
+		if (d)
+		{
+			box_x += 2;
+			f++;
+			if (f == 25) {
+				f = 0;
+				d = false;
+				return;
+			}
+			return;
 		}
 	}
 	if (box_x < 200 && box_y == 150) {

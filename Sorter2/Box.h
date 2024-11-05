@@ -21,6 +21,11 @@ public:
 	float box_height;
 	float speed = 50;
 	int c = 1;
+	int f = 0;
+	bool w = false;
+	bool s = false;
+	bool a = false;
+	bool d = false;
 	Loaders loaders = Loaders();
 
 	void Draw2();

@@ -20,6 +20,11 @@ public:
 	int loaders_height = 50;
 	int speed = 50;
 	int c = 0;
+	int frame = 0;
+	bool w = false;
+	bool a = false;
+	bool s = false;
+	bool d = false;
 	double lastUpdateTime1 = 0;
 	//Box box = Box();
 
