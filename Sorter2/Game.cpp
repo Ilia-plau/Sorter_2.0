@@ -9,15 +9,19 @@ void Game::Draw() {
 	loaders.Draw5();
 }
 void Game::Score() {
-	if (box.box_x >= 100 && box.box_x <= 200 && box.box_y >= 450 && box.box_y <= 550 && box.GetRandomType() == "rbox") {
+	if (box.box_x >= 0 && box.box_x <= 150 && box.box_y >=50 && box.box_y <= 150 && box.GetRandomType() == "rbox") {
 		score++;
 		box.Reset1();
 	}
-	if (box.box_x >= 350 && box.box_x <= 450 && box.box_y >= 450 && box.box_y <= 550 && box.GetRandomType() == "bbox") {
+	if (box.box_x >= 0 && box.box_x <= 150 && box.box_y >= 550 && box.box_y <= 700 && box.GetRandomType() == "bbox") {
 		score++;
 		box.Reset1();
 	}
-	if (box.box_x >= 600 && box.box_x <= 700 && box.box_y >= 450 && box.box_y <= 550 && box.GetRandomType() == "gbox") {
+	if (box.box_x >= 700 && box.box_x <= 850 && box.box_y >=550  && box.box_y <= 700 && box.GetRandomType() == "gbox") {
+		score++;
+		box.Reset1();
+	}
+	if (box.box_x >= 700 && box.box_x <= 850 && box.box_y >= 50 && box.box_y <= 150 && box.GetRandomType() == "ybox") {
 		score++;
 		box.Reset1();
 	}

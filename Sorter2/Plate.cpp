@@ -2,7 +2,8 @@
 
 
 void Plate::Draw4() {
-	DrawTexture(plater, 100, 450, WHITE);
-	DrawTexture(plateb, 350, 450, WHITE);
-	DrawTexture(plateg, 600, 450, WHITE);
+	DrawTexture(plater, 0, 50, WHITE);
+	DrawTexture(plateb, 0, 550, WHITE);
+	DrawTexture(plateg, 700, 550, WHITE);
+	DrawTexture(platey,700,50, WHITE);
 }

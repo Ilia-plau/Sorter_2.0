@@ -9,7 +9,7 @@ using namespace std;
 class Textures
 {
 public:
-	Texture2D boxr, boxb, boxg, plater, plateb, plateg, background, conveyor, loader;
+	Texture2D boxr, boxb, boxg,boxy, plater, plateb, plateg,platey, background, conveyor, loader;
 	Textures();
 };
 
